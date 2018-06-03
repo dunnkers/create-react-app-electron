@@ -1,5 +1,6 @@
 {
   "name": "create-react-app-electron",
+  "author": "Jeroen Overschie",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -14,12 +15,25 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "electron-dev": "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\""
+    "electron-dev": "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
+    "preelectron-pack": "yarn build",
+    "dist": "electron-builder"
   },
   "devDependencies": {
     "concurrently": "^3.5.1",
     "electron": "^2.0.2",
     "electron-builder": "^20.15.1",
     "wait-on": "^2.1.0"
+  },
+  "homepage": "./",
+  "build": {
+    "appId": "com.example.electron-cra",
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
   }
 }
