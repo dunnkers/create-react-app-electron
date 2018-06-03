@@ -3,15 +3,23 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "electron-is-dev": "^0.3.0",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-scripts": "1.1.4"
   },
-  "main": "src/electron-starter.js",
+  "main": "public/electron.js",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "electron-dev": "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\""
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.1",
+    "electron": "^2.0.2",
+    "electron-builder": "^20.15.1",
+    "wait-on": "^2.1.0"
   }
 }
