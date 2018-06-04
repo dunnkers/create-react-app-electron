@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { hot } from 'react-hot-loader';
+import { Button } from 'antd';
+
 import logo from './logo.svg';
 import './App.css';
 
@@ -25,8 +27,8 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <p className="App-intro">
-          <button onClick={() => this.changeCount(1)}>increase</button>
-          <button onClick={() => this.changeCount(-1)}>decrease</button>
+          <Button onClick={() => this.changeCount(1)}>increase</Button>
+          <Button onClick={() => this.changeCount(-1)}>decrease</Button>
         </p>
         <p>{this.state.count}</p>
       </div>
