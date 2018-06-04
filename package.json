@@ -6,15 +6,18 @@
   "dependencies": {
     "electron-is-dev": "^0.3.0",
     "react": "^16.4.0",
+    "react-app-rewire-hot-loader": "^1.0.1",
+    "react-app-rewired": "^1.5.2",
     "react-dom": "^16.4.0",
+    "react-hot-loader": "^4.2.0",
     "react-scripts": "1.1.4"
   },
   "main": "public/electron.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test --env=jsdom",
+    "eject": "react-app-rewired eject",
     "electron-dev": "concurrently \"cross-env BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
     "preelectron-pack": "yarn build",
     "dist": "electron-builder"
