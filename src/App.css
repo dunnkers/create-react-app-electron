@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .App-logo {
@@ -21,6 +23,11 @@
 .App-intro {
   font-size: large;
   margin: 18px 0px;
+}
+
+.App-repo-search {
+  width: 330px;
+  align-self: center;
 }
 
 @keyframes App-logo-spin {
