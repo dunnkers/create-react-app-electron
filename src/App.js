@@ -3,6 +3,19 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0
+    };
+  }
+
+  changeCount(number) {
+    const count = this.state.count + number;
+
+    this.setState({ count });
+  }
+
   render() {
     return (
       <div className="App">
@@ -11,8 +24,10 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+          <button onClick={() => this.changeCount(1)}>increase</button>
+          <button onClick={() => this.changeCount(-1)}>decrease</button>
         </p>
+        <p>{this.state.count}</p>
       </div>
     );
   }
